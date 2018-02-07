@@ -1,0 +1,10 @@
+main, html{
+  margin:0;
+  padding: 0;
+
+}
+
+.container{
+  margin: 7% auto;
+  width:50%;
+}
