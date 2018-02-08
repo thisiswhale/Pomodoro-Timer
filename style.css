@@ -8,3 +8,14 @@ main, html{
   margin: 7% auto;
   width:50%;
 }
+
+.pomodoro-box-top{
+  background-color: orange;
+}
+.top{
+  display: inline-block;
+  text-align: center;
+}
+.pomodoro-box-bottom{
+  background-color: pink;
+}
