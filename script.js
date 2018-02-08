@@ -10,9 +10,9 @@ for (let i = 0; i < addMinute.length; i++) {
   subtractMinute[i].addEventListener('click', subtract);
 }
 
-startTimer();
-
-function startTimer() {
+start();
+function start(){
+  stop();
   timer = startTime.textContent * 60;
   run();
 }
@@ -22,17 +22,18 @@ function run() {
 }
 
 function decrement() {
-
-  timer--;
-  //  Show the number in the .display-timer tag.
-  document.querySelector('.display-timer').innerHTML = timer;
+  let countdownTimer = timeConverter(timer);
+  //  Show the timer in the .display-timer tag.
+  document.querySelector('.display-timer').innerHTML = countdownTimer;
 
   //  Once number hits zero...
   if (timer === 0) {
     stop(); //  ...run the stop function.
     timer = breakTime.textContent * 60;
-    document.querySelector('.display-timer').innerHTML = timer;
-    run();
+    setTimeout(run, 2000);
+  }
+  else{
+    timer--;
   }
 }
 
@@ -61,4 +62,23 @@ function subtract() {
     value = parseFloat(breakTime.textContent) - 1;
     breakTime.innerHTML = value;
   }
+}
+
+function timeConverter(t) {
+
+  //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
+  var minutes = Math.floor(t / 60);
+  var seconds = t - (minutes * 60);
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  if (minutes === 0) {
+    minutes = "00";
+  } else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  return minutes + ":" + seconds;
 }
