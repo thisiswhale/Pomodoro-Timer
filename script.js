@@ -29,6 +29,7 @@ function decrement() {
   //  Once number hits zero...
   if (timer === 0) {
     stop(); //  ...run the stop function.
+
     timer = breakTime.textContent * 60;
     setTimeout(run, 2000);
   }
@@ -43,10 +44,10 @@ function stop() {
 
 function add() {
   let value;
-  if (this.classList.contains('time-selector-box')) {
-    value = parseFloat(startTime.textContent) + 1;
+  if (this.classList.contains('time-selector-box') && parseFloat(startTime.textContent) >=5) {
+    value = parseFloat(startTime.textContent) + 5;
     startTime.innerHTML = value;
-  } else if (this.classList.contains('breaktime-box')) {
+  } else if (this.classList.contains('breaktime-box')  && parseFloat(breakTime.textContent) >=1)  {
     value = parseFloat(breakTime.textContent) + 1;
     breakTime.innerHTML = value;
   }
@@ -54,13 +55,20 @@ function add() {
 }
 
 function subtract() {
+
   let value;
-  if (this.classList.contains('time-selector-box')) {
-    value = parseFloat(startTime.textContent) - 1;
-    startTime.innerHTML = value;
-  } else if (this.classList.contains('breaktime-box')) {
+  if (this.classList.contains('time-selector-box') && parseFloat(startTime.textContent) >=5) {
+    value = parseFloat(startTime.textContent) - 5;
+
+    if(value != 0){
+      startTime.innerHTML = value;
+    }
+  }
+  else if (this.classList.contains('breaktime-box') && parseFloat(breakTime.textContent) >=1) {
     value = parseFloat(breakTime.textContent) - 1;
+    if(value != 0){
     breakTime.innerHTML = value;
+    }
   }
 }
 

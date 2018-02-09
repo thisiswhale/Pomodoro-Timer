@@ -29,13 +29,14 @@ button {
   .pomodoro-box .top {
     display: inline-block; }
   .pomodoro-box .pomodoro-box-top {
+    user-select: none;
     background-color: #47FF63;
     border: 7px solid #1CD939;
     border-radius: 90px;
     margin: 0 auto;
     font-size: 30px;
     padding-bottom: 5px;
-    width: 200px;
+    width: 220px;
     height: 30px;
     text-align: center;
     position: relative;
@@ -43,6 +44,9 @@ button {
     .pomodoro-box .pomodoro-box-top .add,
     .pomodoro-box .pomodoro-box-top .minus {
       cursor: pointer; }
+    .pomodoro-box .pomodoro-box-top .counter {
+      height: 50px;
+      width: 50px; }
   .pomodoro-box .pomodoro-box-bottom {
     background-color: #FF6347;
     text-align: center;
