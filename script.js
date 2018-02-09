@@ -5,6 +5,9 @@ const breakTime = document.getElementById('breaktime-num');
 const addMinute = document.getElementsByClassName('add');
 const subtractMinute = document.getElementsByClassName('minus');
 
+var audio = new Audio('https://res.cloudinary.com/thisiswhale/video/upload/v1518166335/Regular_Show__OOOOOOOOOOOOOOOOOOOOHHHHHHHHH_qlwzvh.mp3');
+
+
 for (let i = 0; i < addMinute.length; i++) {
   addMinute[i].addEventListener('click', add);
   subtractMinute[i].addEventListener('click', subtract);
@@ -29,7 +32,7 @@ function decrement() {
   //  Once number hits zero...
   if (timer === 0) {
     stop(); //  ...run the stop function.
-
+    audio.play();
     timer = breakTime.textContent * 60;
     setTimeout(run, 2000);
   }
