@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Pomodoro</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
-  <div class="pomodoro-box">
-    <div class="pomodoro-box-top">
-      <div class="breaktime-box top counter minus">-
+  <div class="container">
+    <div class="pomodoro-box">
+              <button onclick='start()'>Start</button>
+      <div class="pomodoro-box-top">
+        <div class="breaktime-box top counter minus">-
+        </div>
+        <div class="breaktime-box top" id='breaktime-num'>5</div>
+        <div class="breaktime-box top counter add">+
+        </div>
+        <div class="time-selector-box top counter minus">-
+        </div>
+        <div class="time-selector-box top" id='time-selector-num'>25</div>
+        <div class="time-selector-box top counter add">+</div>
       </div>
-      <div class="breaktime-box top" id='breaktime-num'>5</div>
-      <div class="breaktime-box top counter add">+
-      </div>
-      <div class="time-selector-box top counter minus">-
-      </div>
-      <div class="time-selector-box top" id='time-selector-num'>1</div>
-      <span class="time-selector-box top counter add">
-+
-</span>
-    </div>
-    <div class="pomodoro-box-bottom">
-      <button onclick='start()'>Start</button>
-      <div class="display-timer">
-      25:00
+      <div class="pomodoro-box-bottom">
+        <div class="display-timer">
+          25:00
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script src='script.js'></script>
+  <script src='script.js'></script>
 </body>
+
 </html>
