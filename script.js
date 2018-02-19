@@ -41,7 +41,7 @@ function decrement() {
     }
     else{
       isBreakTime = false;
-      start();
+      timer = startTime.textContent * 60;
     }
 
     setTimeout(run, 2000);
