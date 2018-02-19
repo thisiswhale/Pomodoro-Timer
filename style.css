@@ -15,13 +15,12 @@ body {
 button {
   margin: 0 auto;
   height: 40px;
-  width: 100px;
   font-family: "Rammetto One", cursive;
   font-size: 20px;
   background-color: #1CD939;
   border-color: #1CD939;
   position: relative;
-  left: 252px;
+  left: 193px;
   border-radius: 30px; }
 
 .pomodoro-box {
@@ -33,9 +32,10 @@ button {
     background-color: #47FF63;
     border: 7px solid #1CD939;
     border-radius: 90px;
+    padding-bottom: 5px;
     margin: 0 auto;
     font-size: 30px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
     width: 220px;
     height: 30px;
     text-align: center;

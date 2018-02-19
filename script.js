@@ -1,5 +1,6 @@
 var intervalId;
 let timer;
+let isBreakTime = false;
 const startTime = document.getElementById('time-selector-num');
 const breakTime = document.getElementById('breaktime-num');
 const addMinute = document.getElementsByClassName('add');
@@ -14,6 +15,7 @@ for (let i = 0; i < addMinute.length; i++) {
 }
 
 start();
+
 function start(){
   stop();
   timer = startTime.textContent * 60;
@@ -33,7 +35,15 @@ function decrement() {
   if (timer === 0) {
     stop(); //  ...run the stop function.
     audio.play();
-    timer = breakTime.textContent * 60;
+    if (!isBreakTime){//Set time to default five minutes if isBreakTime is false
+      isBreakTime = true;
+      timer = breakTime.textContent * 60;
+    }
+    else{
+      isBreakTime = false;
+      start();
+    }
+
     setTimeout(run, 2000);
   }
   else{
